@@ -6,7 +6,7 @@ function loadDp() {
     var rowEnd;
     var rowBegin;
     setClock();
-    for(var x=9; x < 24; x++) {
+    for(var x=9; x < 18; x++) {
         row ='<div id="' + x + '" class="row">'+
              '<div align="right" class="hour">'+ (x > 12 ? (x-12) : x) + " "+ (x > 11 ? 'pm' : 'am') + '</div>' + 
              '<textarea id="hour'+x+'" class=' + (x < currentHr ? "past" : x === currentHr ? "present" : "future") + '></textarea>' +
@@ -15,7 +15,7 @@ function loadDp() {
         output.push(row); 
     }
     $(".container").append(output);
-    for(var x=9; x < 24; x++) {
+    for(var x=9; x < 18; x++) {
         getSchedule(x);
     }
 }
